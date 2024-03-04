@@ -32,19 +32,41 @@ public class ZProstokat extends Prostokat {
             for (int i = 0; i <width ; i++) {
                 System.out.print(znak1);
             }
+            System.out.println();
             for (int i = 0; i < height-2; i++) {
                 System.out.print(znak1);
                 for (int j = 0; j <width-2 ; j++) {
                     System.out.print(znak2);
                 }
-                System.out.println(znak1);
-            } for (int i = 0; i <width ; i++) {
+                System.out.print(znak1);
+                System.out.println();
+            }
+
+            for (int i = 0; i <width ; i++) {
                 System.out.print(znak1);
             }
             System.out.println();
-        }else System.out.printf("Kwadrat (%d), rozmiaru  %d x %d, %c=%d,%c=%d \n",
-                kwadrat_znakowy_id,width,height,znak1,width*height-(2*width)-((2*height)-4),znak2,width*height-(width*height-(2*width)-((2*height)-4)));
+        }else {
+            System.out.printf("Kwadrat (%d), rozmiaru  %d x %d, %c=%d,%c=%d \n",
+                    kwadrat_znakowy_id, width, height, znak1, width * height - (2 * width) - ((2 * height) - 4), znak2, width * height - (width * height - (2 * width) - ((2 * height) - 4)));
+            for (int i = 0; i < width; i++) {
+                System.out.print(znak1);
+            }
+            System.out.println();
+            for (int i = 0; i < height - 2; i++) {
+                System.out.print(znak1);
+                for (int j = 0; j < width - 2; j++) {
+                    System.out.print(znak2);
+                }
+                System.out.print(znak1);
+                System.out.println();
+            }
 
+            for (int i = 0; i < width; i++) {
+                System.out.print(znak1);
+            }
+            System.out.println();
+        }
     }
 
 }
