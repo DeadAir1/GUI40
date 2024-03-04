@@ -10,6 +10,8 @@ public class ZProstokat extends Prostokat {
 
     ZProstokat(int width,int height,char znak1,char znak2) {
         super(width, height);
+        this.znak1=znak1;
+        this.znak2=znak2;
         if(height!=width)
             prostokat_znakowy_id=++prostokat_counter;
         else kwadrat_znakowy_id=++kwadrat_counter;
