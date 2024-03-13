@@ -1,4 +1,4 @@
-package ex03;
+package Wyklady.w02.ex03;
 
 public
     class C

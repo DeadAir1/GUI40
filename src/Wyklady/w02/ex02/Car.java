@@ -1,4 +1,4 @@
-package ex02;
+package Wyklady.w02.ex02;
 
 public
     class Car

@@ -1,8 +1,7 @@
 package Chess;
 
-public abstract class Figure {
+public abstract class Figure implements Moveable{
     boolean isWhite;
-    boolean firstMove=true;
     Coordinates coordinates;
 
     public Figure(boolean isWhite,Coordinates coordinates) {
@@ -10,5 +9,5 @@ public abstract class Figure {
         this.coordinates=coordinates;
     }
 
-    protected abstract boolean isLegalMove(Coordinates to,Board board);
+
 }

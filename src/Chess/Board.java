@@ -1,33 +1,35 @@
 package Chess;
 
 public class Board {
-    Board instance;
-    Figure [] figures=new Figure[32];
+    Figure [][] figuresAtBoard=new Figure[8][8];
 
-    private Board() {
+    void move(Coordinates from,Coordinates to){
+        if(figuresAtBoard[to.y][to.x]==null ||
+                figuresAtBoard[to.y][to.x].isWhite!=figuresAtBoard[from.y][from.x].isWhite){
+            if(figuresAtBoard[from.y][from.x].isLegalMove(to)){
+            figuresAtBoard[to.y][to.x]=figuresAtBoard[from.y][from.x];
+            figuresAtBoard[from.y][from.x]=null;
+            System.out.println("Udalo sie");
+            }
+        }else System.out.println(" Nie udalo sie");
     }
-    public Board getInstance(){
-        if(instance==null){
-            instance=new Board();
+
+    public Board() {
+        fillBoardWithFigure();
+    }
+    public  void printBoard(){
+        for (int i = 0; i < figuresAtBoard.length; i++) {
+            for (int j = 0; j < figuresAtBoard[i].length; j++) {
+                System.out.print(figuresAtBoard[i][j] + " ");
+            }
+            System.out.println();
         }
-        return instance;
     }
 
-
-         void addFigures(){
-         figures[0]=new Pawn(true,new Coordinates(0,1));
-         }
-         void move (Coordinates from,Coordinates to){
-             for (int i = 0; i < figures.length; i++) {
-                 if(figures[i]!=null){
-                     if(figures[i].coordinates==from){
-                         if(figures[i].isLegalMove(to,getInstance())){
-                             figures[i].coordinates=to;
-                         }
-                     break;
-                     }
-                 }
-             }
-         }
-
+    void fillBoardWithFigure(){
+        for (int i = 0; i <8 ; i++) {
+            figuresAtBoard[1][i]=new Pawn(true,new Coordinates(1,i));
+        figuresAtBoard[6][i]=new Pawn(false,new Coordinates(6,i));
+        }
+    }
 }

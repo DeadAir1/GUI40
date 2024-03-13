@@ -1,29 +1,31 @@
 package Chess;
 
-public class Pawn extends Figure {
+public class Pawn extends Figure{
+    boolean isFirstMove=true;
     public Pawn(boolean isWhite,Coordinates coordinates) {
         super(isWhite,coordinates);
     }
 
-    protected boolean isLegalMove(Coordinates to,Board board) {
-        if(firstMove){
-            if(to.y-this.coordinates.y>2) return false;
-        }else{
-            if(to.y-this.coordinates.y>1) return false;
+    @Override
+    public boolean isLegalMove(Coordinates to) {
+        if(!isFirstMove){
+            if(to.y-this.coordinates.y>1 || to.y- this.coordinates.y==0){
+                return false;
+            }else if(to.x-this.coordinates.x>1)
+                return false;
+        }else {
+            if(to.y-this.coordinates.y>2 || to.y - this.coordinates.y==0)
+                return false;
+            else if(to.x-this.coordinates.x!=0)
+                return false;
         }
-      if((to.x<=8 && to.y <=8) && (to.x>=1 && to.y>=1)){
-          for (int i = 0; i < board.figures.length; i++) {
-              if(board.figures[i].coordinates==to){
-                  return false;
-              }else if(!firstMove && (board.figures[i].coordinates.y==this.coordinates.y+1)) return false;
-
-
-          }
-      }else return false;
-
-      firstMove=false;
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Pawn{" +
+                "isWhite=" + isWhite +
+                '}';
+    }
 }
-
