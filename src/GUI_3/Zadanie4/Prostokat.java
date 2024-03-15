@@ -18,7 +18,7 @@ public class Prostokat extends Figura {
     void pozycja(int x, int y) {
 
     }
-
+//
     @Override
     public String toString() {
         return "Prostokat{" +
