@@ -8,22 +8,22 @@ public class Test {
             out[i]= trans.apply(in[i]);
         }
     }
-/*    public static void main(String[] args) {
+    public static void main(String[] args) {
 
         String[] sin = {"Alice", "Sue", "Janet", "Bea"};
         System.out.println(Arrays.toString(sin) + '\n');
 
         Integer[] iout = new Integer[sin.length];
-        transform(sin, iout,*//* ... *//*);
+        transform(sin, iout,s -> s.charAt(0));
         System.out.println(Arrays.toString(iout));
 
         Character[] cout = new Character[sin.length];
-        transform(sin, cout, *//* ... *//*);
+        transform(sin, cout,s -> s.charAt(0));
         System.out.println(Arrays.toString(cout));
 
         String[] sout = new String[sin.length];
-        transform(sin, sout, *//* ... *//*);
+        transform(sin, sout,s -> s.charAt(0));
         System.out.println(Arrays.toString(sout));
 
-    }*/
+    }
 }
