@@ -1,9 +1,11 @@
-package GUI_4;
+package GUI_4.Zadanie9;
+
+
 
 import java.util.Arrays;
 
 public class Test {
-    private static <T,R> void transform(T[] in,R[] out,Transform<T,R> trans){
+    private static <T,R> void transform(T[] in, R[] out, Transform<T,R> trans){
         for (int i = 0; i <in.length ; i++) {
             out[i]= trans.apply(in[i]);
         }
@@ -14,7 +16,7 @@ public class Test {
         System.out.println(Arrays.toString(sin) + '\n');
 
         Integer[] iout = new Integer[sin.length];
-        transform(sin, iout,s -> s.charAt(0));
+        transform(sin, iout,new StrToInt());
         System.out.println(Arrays.toString(iout));
 
         Character[] cout = new Character[sin.length];
@@ -22,7 +24,7 @@ public class Test {
         System.out.println(Arrays.toString(cout));
 
         String[] sout = new String[sin.length];
-        transform(sin, sout,s -> s.charAt(0));
+        transform(sin, sout,s -> s.toUpperCase());
         System.out.println(Arrays.toString(sout));
 
     }

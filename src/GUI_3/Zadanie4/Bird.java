@@ -1,4 +1,4 @@
-package GUI_3.Zadanie3;
+package GUI_3.Zadanie4;
 
 public class Bird implements Flyable,Speakable{
     @Override
