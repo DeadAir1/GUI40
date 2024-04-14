@@ -1,13 +1,16 @@
 package GUI_6.Zadanie14;
 
 public class Samochod {
-    private String salon;
-    private String marka;
-    private String cena;
+     String marka;
+    String cena;
 
-    public Samochod(String salon, String marka, String cena) {
-        this.salon = salon;
+    public Samochod( String marka, String cena) {
         this.marka = marka;
         this.cena = cena;
+    }
+
+    @Override
+    public String toString() {
+        return marka + " " + cena;
     }
 }

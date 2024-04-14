@@ -56,9 +56,9 @@ class ProductComparator implements Comparator<Product>{
     @Override
     public int compare(Product o1, Product o2) {
         return switch (this.productBy){
-            case TITLE -> o1.getTitle().charAt(0)-o2.getTitle().charAt(0);
-            case PRICE -> o1.getPrice()-o2.getPrice();
-            case CATEGORY ->o1.getCategory().getValue()-o2.getCategory().getValue();
+            case ProductBy.TITLE -> o1.getTitle().charAt(0)-o2.getTitle().charAt(0);
+            case ProductBy.PRICE -> o1.getPrice()-o2.getPrice();
+            case ProductBy.CATEGORY ->o1.getCategory().getValue()-o2.getCategory().getValue();
         };
     }
 }
